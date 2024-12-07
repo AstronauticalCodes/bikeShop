@@ -1,3 +1,5 @@
+from tabnanny import verbose
+
 from django.db import models
 
 # write your models here
@@ -56,3 +58,9 @@ class Order(models.Model):
     surname = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=100)
     status = models.CharField(max_length=1, choices=STATUS_OPTIONS)
+
+
+class Customer(models.Model):
+    name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=100)

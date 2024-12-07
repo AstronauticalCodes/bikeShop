@@ -3,8 +3,22 @@
 <p>seat: {{ bike.seat.color }}</p>
 <p>tires: {{ bike.tire.type }}</p>
 {% if bike.has_basket %}
-<p>basket: yes</p>
+    <p>basket: yes</p>
 {% else %}
-<p>basket: no</p>
+    <p>basket: no</p>
 {% endif %}
 <p>description: {{ bike.description }}</p>
+<br>
+
+{% if parts_avail %}
+    <p><b>If you want to order the bike, fill in the form below:</b></p>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_p }}
+        </table>
+        <input type="submit" name="Order">
+    </form>
+{% else %}
+    <p><b>Unfortunately, this bike is currently not available.</b></p>
+{% endif %}
