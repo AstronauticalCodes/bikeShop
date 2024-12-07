@@ -7,20 +7,31 @@ class Frame(models.Model):
     color = models.CharField(max_length=100)
     quantity = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.color} Frame"
+
 
 class Seat(models.Model):
     color = models.CharField(max_length=100)
     quantity = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.color} Seat"
 
 
 class Tire(models.Model):
     type = models.CharField(max_length=100)
     quantity = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.type} Tire"
+
 
 class Basket(models.Model):
     quantity = models.IntegerField()
 
+    def __str__(self):
+        return "Astro Basket"
 
 class Bike(models.Model):
     frame = models.ForeignKey(Frame, on_delete=models.DO_NOTHING)
