@@ -1,0 +1,10 @@
+<h2>{{ bike.name }}</h2>
+<p>frame:{{ bike.frame }}</p>
+<p>seat:{{ bike.seat }}</p>
+<p>tires:{{ bike.tire }}</p>
+{{ if bike.has_basket }}
+<p>basket: yes</p>
+{{ else }}
+<p>basket: no</p>
+{{ endif }}
+<p>description:{{ bike.description }}</p>
